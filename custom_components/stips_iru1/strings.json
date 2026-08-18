@@ -1,0 +1,81 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect STIPS account",
+        "description": "Choose the STIPS API environment, then sign in. Production is the default. Production uses `production.api.stips.visionalization.net`; staging uses `stips.api.stagging.visionalization.net`. The login downloads your IR catalog; normal IR control runs locally on your LAN.",
+        "data": {
+          "server": "Server",
+          "username": "Username",
+          "password": "Password"
+        }
+      },
+      "reconfigure": {
+        "title": "STIPS connection",
+        "description": "Change the API environment for this existing STIPS entry and refresh its account catalog. Production uses `production.api.stips.visionalization.net`; staging uses `stips.api.stagging.visionalization.net`. Leave the password blank to keep the current password.",
+        "data": {
+          "server": "Server",
+          "username": "Username",
+          "password": "Password"
+        }
+      },
+      "device_ip": {
+        "title": "Device IP",
+        "description": "Review the LAN IP for **{device_name}** (`{device_unique_name}`). The API reported **{detected_ip}**. You can edit the IP before saving it. Leave it blank to use hostname/mDNS only.",
+        "data": {
+          "device_ip": "Saved device IP"
+        }
+      },
+      "ip_options": {
+        "title": "Automatic IP updates",
+        "description": "When enabled, Home Assistant does not poll the IRU1. It tries the saved IP first. Only if that IP cannot be reached but the device still responds through mDNS/hostname, the integration reads `/device_info` in the background and saves the new `ip_address`.",
+        "data": {
+          "auto_update_ip": "Recover changed IP after mDNS fallback"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Update STIPS credentials",
+        "description": "The saved STIPS credentials are no longer accepted. Enter valid credentials for the same account. The catalog will be refreshed after successful login.",
+        "data": {
+          "username": "Username",
+          "password": "Password"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Invalid username/password",
+      "no_catalog_permission": "Login succeeded, but this account has no permission to read IR catalog endpoints",
+      "cannot_connect": "Cannot connect to STIPS API",
+      "no_areas": "No areas found for this account",
+      "no_devices": "No IR devices found for this account",
+      "invalid_ip": "Enter a valid IP address or leave the field blank",
+      "unknown": "Unexpected error"
+    },
+    "abort": {
+      "already_configured": "This STIPS account is already configured",
+      "reconfigure_successful": "STIPS connection settings updated",
+      "reauth_successful": "STIPS credentials updated successfully"
+    }
+  },
+  "options": {
+    "step": {
+      "device_ip": {
+        "title": "Device IP",
+        "description": "Edit the saved LAN IP for **{device_name}** (`{device_unique_name}`). The last cloud catalog IP is **{detected_ip}**. Leave it blank to use hostname/mDNS only.",
+        "data": {
+          "device_ip": "Saved device IP"
+        }
+      },
+      "ip_options": {
+        "title": "Automatic IP updates",
+        "description": "When enabled, there is no periodic IP check. The integration only reads `/device_info` after the saved IP fails and the IRU1 command succeeds through mDNS/hostname, then saves the new IP for future commands.",
+        "data": {
+          "auto_update_ip": "Recover changed IP after mDNS fallback"
+        }
+      }
+    },
+    "error": {
+      "invalid_ip": "Enter a valid IP address or leave the field blank"
+    }
+  }
+}

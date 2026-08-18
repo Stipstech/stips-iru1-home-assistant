@@ -1,0 +1,52 @@
+refresh_catalog:
+  name: Refresh STIPS catalog
+  description: >
+    Re-download areas, devices, remotes, and models from STIPS, then reload the integration.
+    Saved/manual local IP overrides are preserved. If credentials have expired, Home Assistant
+    starts the reauthentication flow.
+  fields:
+    config_entry_id:
+      required: false
+      description: >
+        Home Assistant config entry id for this integration. Omit to refresh every
+        STIPS IRU1 entry.
+      selector:
+        text:
+
+refresh_device_ips:
+  name: Refresh STIPS device IPs
+  description: >
+    Manual troubleshooting action. Immediately discover each IRU1 over mDNS, read
+    /device_info, and save a changed ip_address. Automatic IP recovery does not run this
+    action on a timer; it normally runs only after a saved IP fails and mDNS control succeeds.
+  fields:
+    config_entry_id:
+      required: false
+      description: >
+        Home Assistant config entry id for this integration. Omit to refresh every
+        STIPS IRU1 entry.
+      selector:
+        text:
+
+send_ac_status:
+  name: Send AC Status
+  description: Send AC status locally to an IRU1 device using backend-compatible ac-command fields.
+  fields:
+    device_unique_name:
+      required: true
+      selector:
+        text:
+    remote_id:
+      required: false
+      description: >
+        Optional STIPS remote UUID. When set, missing ac_status fields type (protocol)
+        and model may be filled from the cached catalog for that remote.
+      selector:
+        text:
+    ac_status:
+      required: true
+      description: >
+        Dictionary containing AC command fields such as type, model, power, mode,
+        fan, temp, swingV, swingH, light, beep, econo, filter, turbo, quiet, clean, sleep, clock, token.
+      selector:
+        object:

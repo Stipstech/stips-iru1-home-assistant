@@ -1,0 +1,16 @@
+{
+  "domain": "stips_iru1",
+  "name": "STIPS IR Remote",
+  "version": "0.4.0",
+  "documentation": "https://github.com/Stipstech/stips-iru1-home-assistant",
+  "issue_tracker": "https://github.com/Stipstech/stips-iru1-home-assistant/issues",
+  "integration_type": "hub",
+  "dependencies": [],
+  "codeowners": [
+    "@Stipstech"
+  ],
+  "config_flow": true,
+  "requirements": [
+    "stips-api-bridge==0.1.0"
+  ]
+}
