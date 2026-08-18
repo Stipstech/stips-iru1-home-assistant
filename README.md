@@ -79,12 +79,3 @@ This repository includes GitHub Actions for:
 - HACS validation
 - Home Assistant hassfest validation
 
-## GitHub repository
-
-This package is configured for the GitHub account **Stipstech** and repository **stips-iru1-home-assistant**.
-
-Repository URL: `https://github.com/Stipstech/stips-iru1-home-assistant`
-
-## Security note
-
-The current integration source contains fixed credentials used by the existing STIPS/mobile/local-device implementation. Before making the repository public, confirm with the STIPS backend/device owner that these values are intentionally distributable defaults/public-client credentials. Do not publish private production secrets.
