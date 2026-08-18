@@ -16,10 +16,6 @@ Custom Home Assistant integration for STIPS IRU1 infrared controllers.
 - Reauthentication and reconfiguration flows.
 - Downloadable diagnostics with sensitive fields redacted.
 
-## API environments
-
-- Production: `production.api.stips.visionalization.net`
-- Staging: `stips.api.stagging.visionalization.net`
 
 ## Installation with HACS
 
